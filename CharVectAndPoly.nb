@@ -1,0 +1,218 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      6664,        209]
+NotebookOptionsPosition[      6036,        184]
+NotebookOutlinePosition[      6381,        199]
+CellTagsIndexPosition[      6338,        196]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PolyToCharVect", "[", 
+   RowBox[{"n_", ",", "f_"}], "]"}], ":=", 
+  RowBox[{"Mod", "[", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Apply", "[", 
+         RowBox[{"f", ",", "#1"}], "]"}], ")"}], "&"}], ",", 
+      RowBox[{"Tuples", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}], ",", "n"}], "]"}]}], "]"}], ",", 
+    "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5157663460311975`*^9, 3.5157664119969707`*^9}, {
+  3.5157664779787445`*^9, 3.515766519659128*^9}, {3.5157668391474023`*^9, 
+  3.5157668583094983`*^9}, {3.515766932688752*^9, 3.5157669351708946`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GetXi", "[", "i_", "]"}], ":=", 
+  RowBox[{"ToExpression", "[", 
+   RowBox[{"(", 
+    RowBox[{"\"\<x\>\"", "<>", 
+     RowBox[{"ToString", "[", "i", "]"}]}], ")"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.51577801597768*^9, 3.5157780169817376`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TrimF", "[", 
+   RowBox[{"v_", ",", "k_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"v", "[", 
+   RowBox[{"[", 
+    RowBox[{"Range", "[", 
+     RowBox[{"k", ",", "n"}], "]"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"C2P", "[", 
+   RowBox[{"n_", ",", "Vect_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "StartList", ",", "Vect1", ",", "Vect2", ",", "p1", ",", "p2", ",", 
+      "result"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"n", "==", "0"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Vect", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "\[Equal]", "0"}], ",", "0", ",", 
+        "1"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Vect1", "=", 
+        RowBox[{"TrimF", "[", 
+         RowBox[{"Vect", ",", "1", ",", 
+          RowBox[{"2", "^", 
+           RowBox[{"(", 
+            RowBox[{"n", "-", "1"}], ")"}]}]}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Vect2", "=", 
+        RowBox[{"TrimF", "[", 
+         RowBox[{"Vect", ",", 
+          RowBox[{
+           RowBox[{"2", "^", 
+            RowBox[{"(", 
+             RowBox[{"n", "-", "1"}], ")"}]}], "+", "1"}], ",", 
+          RowBox[{"2", "^", "n"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"p1", "=", 
+        RowBox[{"C2P", "[", 
+         RowBox[{
+          RowBox[{"n", "-", "1"}], ",", "Vect1"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"p2", "=", 
+        RowBox[{"C2P", "[", 
+         RowBox[{
+          RowBox[{"n", "-", "1"}], ",", "Vect2"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"result", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"GetXi", "[", 
+           RowBox[{"total", "-", "n", "+", "1"}], "]"}], "*", "p2"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "+", 
+            RowBox[{"GetXi", "[", 
+             RowBox[{"total", "-", "n", "+", "1"}], "]"}]}], ")"}], "*", 
+          "p1"}]}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQfUqp/dIqw1eOs9KOXQHR6aEP3oPokNcdH8Dimz7t
+PQOkzV6x7wPRSYeMboHontNGj0G0/0Wv1yD6Rcf+TyDa+B3LfxC9c/sribNA
+Okfi5zkQrRcx/TyI7lnfcgdEf/o88RmIPiFRw3AeSGtJPGAD0Qzh87hB9Ksr
+D8F08w9GQRB9hYUFTHvenSYJopWUr0qD6A1V/7RAtNmLJzogmiVZ0h1Ec710
+9AHRL5asjQDRs15sAdM97sflLwBpPq3lCiD69//CMBAt9fxyNFg8dHICiBYQ
+cUkE0SINLg0gWj7dqRFEAwA5Bp9P
+  "]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CharVectToPoly", "[", 
+   RowBox[{"n_", ",", "Vect_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"total", "=", "n"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"PolynomialMod", "[", 
+      RowBox[{
+       RowBox[{"C2P", "[", 
+        RowBox[{"n", ",", "Vect"}], "]"}], ",", "2"}], "]"}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.515777808570817*^9, 3.5157778597097425`*^9}, {
+  3.515777978973564*^9, 3.5157779823117547`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolyToCharVect", "[", 
+  RowBox[{"4", ",", 
+   RowBox[{"Function", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x1", ",", "x2", ",", "x3", ",", "x4"}], "}"}], ",", 
+     RowBox[{"x1", "+", 
+      RowBox[{"x2", "*", "x3"}], "+", "x3", "+", "x2", "+", "1"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.515778089555889*^9, 3.51577816982848*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+   ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
+   "1"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.5157781129512267`*^9, {3.515778143511975*^9, 3.5157781716025815`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CharVectToPoly", "[", 
+  RowBox[{"4", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", 
+     ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.515778121838735*^9, 3.515778129909197*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1", "+", "x1", "+", "x2", "+", "x3", "+", 
+  RowBox[{"x2", " ", "x3"}]}]], "Output",
+ CellChangeTimes->{3.5157781732966785`*^9}]
+}, Open  ]]
+},
+WindowSize->{607, 677},
+WindowMargins->{{Automatic, 179}, {Automatic, 1}},
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 699, 19, 52, "Input"],
+Cell[1247, 41, 285, 7, 31, "Input"],
+Cell[1535, 50, 231, 7, 31, "Input"],
+Cell[1769, 59, 2382, 64, 232, "Input"],
+Cell[4154, 125, 581, 15, 92, "Input"],
+Cell[CellGroupData[{
+Cell[4760, 144, 384, 10, 31, "Input"],
+Cell[5147, 156, 319, 7, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5503, 168, 362, 8, 31, "Input"],
+Cell[5868, 178, 152, 3, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
